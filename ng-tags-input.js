@@ -271,6 +271,7 @@ tagsInput.directive('tagsInput', ["$timeout","$document","$window","tagsInputCon
                 ngModelCtrl.$setValidity('maxTags', scope.tags.length <= options.maxTags);
                 ngModelCtrl.$setValidity('minTags', scope.tags.length >= options.minTags);
                 ngModelCtrl.$setValidity('leftoverText', scope.hasFocus || options.allowLeftoverText ? true : !scope.newTag.text);
+                ngModelCtrl.$validate();
             };
 
             ngModelCtrl.$isEmpty = function(value) {
